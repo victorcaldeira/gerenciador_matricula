@@ -1,6 +1,4 @@
-
-#  Laboratório de Desenvolvimento de Software
-
+# Laboratório de Desenvolvimento de Software
 
 ## Descrição do Sistema
 
@@ -28,10 +26,10 @@ Todos os usuários do sistema têm senhas que são utilizadas para validação d
 
 # Histórias de usuário
 
-- 
--
--
-
+- Como usuário do sistema, eu quero poder realizar login, para que seja possivel acessar as funcionalidades do sistema.
+- Como secretaria, eu quero poder gerar o curriculo de cada semestre, para que os alunos consigam realizar a matricula.
+- Como aluno, eu quero poder me matricular nas disciplinas, para que consiga avançar no curso.
+- Como professor quero poder acessar o sistema e ver quantos alunos estão matriculados, para poder planejar as aulas de acordo com a quantidade de alunos
 
 # Desenvolvimento e Entregas
 
@@ -44,7 +42,6 @@ Todos os usuários do sistema têm senhas que são utilizadas para validação d
 - Lab01S03: XXXX
 
 - Lab01S04: XXXX
-
 
 </p>
 <br/>
