@@ -42,6 +42,6 @@ Todos os usuários do sistema têm senhas que são utilizadas para validação d
 
 - Lab01S02: Projeto Estrutural: Diagrama de Classes referente ao sistema + Criação do Projeto Java, contendo: classes, atributos e métodos modelados
 
-- Lab01S03: XXXX
+- Lab01S03: Correção dos Diagramas desenvolvidos + Implementação do protótipo do sistema (principais funcionalidades usáveis, com interface e persistência) 
 
 - Lab01S04: XXXX
