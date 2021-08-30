@@ -1,15 +1,15 @@
-package Implementa√ß√£o.Usuario;
+package entities.usuario;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class Usuario {
 
-    private int matricula; // N√∫mero de matr√≠cula
+    private int matricula; // N˙mero de matrÌcula
     private String senha; // Senha cadastrada pala login
-    private String nome; // Nome do usu√°rio
+    private String nome; // Nome do usu·rio
     private int origem; // 0 = logoff, 1 = secretaria, 2 = professor, 3 = aluno
-    private ArrayList<Integer> disciplinas = new ArrayList<Integer>();   //Disciplinas em que est√° vinculado
+    private ArrayList<Integer> disciplinas = new ArrayList<Integer>();   //Disciplinas em que est· vinculado
 
     public int getMatricula() {
         return this.matricula;
@@ -54,10 +54,8 @@ public class Usuario {
         this.origem = origem;
     }
 
-    public Usuario() {
-    }
 
-    // Valida√ß√£o de login
+    // ValidaÁ„o de login
     public int login(int matricula, String senha) {
         if (this.matricula == matricula && this.senha == senha)
             return this.origem;
@@ -67,6 +65,7 @@ public class Usuario {
 
     public String toCsv() {
         return (this.getMatricula() + ";" + this.getSenha() + ";" + this.getNome() + ";" + this.getOrigem() + ";"
-                + this.getDisciplinas().stream().map(String::valueOf).collect(Collectors.joining(",")) + ";");
+                + this.getDisciplinas().stream().map(String::valueOf).collect(Collectors.joining(",")));
     }
+    
 }

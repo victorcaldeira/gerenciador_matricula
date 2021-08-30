@@ -1,8 +1,8 @@
-package Implementação.Usuario;
+package entities.usuario;
 
 import java.util.ArrayList;
 
-import Implementação.Disciplina.Disciplina;
+import entities.disciplina.Disciplina;
 
 public class Professor extends Usuario {
 
@@ -10,10 +10,7 @@ public class Professor extends Usuario {
     
     //Construtor da classe Professor
     public Professor(int matricula, String senha, String nome, int origem) {
-        this.setMatricula(matricula);
-        this.setSenha(senha);
-        this.setNome(nome);
-        this.setOrigem(origem);
+     super(matricula, senha, nome, origem);
     }
 
     //Professor consulta os nomes dos alunos cadastrados em uma disciplina

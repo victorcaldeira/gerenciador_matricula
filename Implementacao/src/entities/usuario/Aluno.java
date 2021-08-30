@@ -1,8 +1,9 @@
-package Implementação.Usuario;
+package entities.usuario;
 
 import java.util.ArrayList;
 
-import Implementação.Disciplina.Disciplina;
+import entities.Curso;
+import entities.disciplina.Disciplina;
 
 public class Aluno extends Usuario {
     private ArrayList<Disciplina> disciplinasEmCurso;
@@ -13,18 +14,15 @@ public class Aluno extends Usuario {
 
     // Construtor da classe Aluno
     public Aluno(int matricula, String senha, String nome, int origem) {
-        this.setMatricula(matricula);
-        this.setSenha(senha);
-        this.setNome(nome);
-        this.setOrigem(origem); 
+        super(matricula, senha, nome, origem);
     }
 
-    public void matricular() {
-
+    public void matricular(Curso curso) {
+    	curso.matricularAluno(this);
     }
 
-    public void cancelarMatricula() {
-
+    public void cancelarMatricula(Curso curso) {
+    	curso.cancelarMatriculaAluno(this);
     }
 
 }
