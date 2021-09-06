@@ -15,10 +15,9 @@ public class Disciplina {
 	private ArrayList<Aluno> alunosMatriculados;
 	private int vagas;
 	private boolean ativa;
-	private static int contadorDisciplinas = 0;
 
-	public Disciplina(String nome, boolean optativa, int vagas, boolean ativa) {
-		this.id = contadorDisciplinas++;
+	public Disciplina(int id, String nome, boolean optativa, int vagas, boolean ativa) {
+		this.id = id;
 		this.nome = nome;
 		this.optativa = optativa;
 		this.ativa = ativa;
@@ -103,4 +102,11 @@ public class Disciplina {
 		return MIN_Inscritos;
 	}
 	
+	public String toCsv() {
+		String matriculasAlunos = "";
+		for(Aluno aluno : this.alunosMatriculados) {
+			matriculasAlunos.concat(String.valueOf(aluno.getMatricula()).concat(","));
+		}	
+		return (this.getID() + ";" + this.getNome() + ";" + this.professor.getMatricula() + ";" + this.optativa + ";" + matriculasAlunos + this.vagas+ ";" + this.ativa);
+	}
 }

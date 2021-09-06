@@ -14,14 +14,13 @@ public class Curso {
 	private LocalDate inicioMatricula;
 	private LocalDate terminoMatricula;
 	private ArrayList<Disciplina> disciplinas;
-	private static int contadorCurso = 0;
 	private ArrayList<Aluno> alunos;
 
-	public Curso(String nome, int creditos, LocalDate inicioMatricula, LocalDate terminoMatricula,
+	public Curso(int id, String nome, int creditos, LocalDate inicioMatricula, LocalDate terminoMatricula,
 			ArrayList<Disciplina> disciplinas) {
 		this.setNome(nome);
 		this.setCreditos(creditos);
-		this.setID(contadorCurso++);
+		this.setID(id);
 		this.disciplinas = disciplinas;
 		this.inicioMatricula = inicioMatricula;
 		this.terminoMatricula = terminoMatricula;
@@ -51,6 +50,10 @@ public class Curso {
 		return disciplinas;
 	}
 
+	public ArrayList<Aluno> getAlunos() {
+		return alunos;
+	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -73,6 +76,9 @@ public class Curso {
 
 	public void matricularAluno(Aluno aluno) {
 		this.alunos.add(aluno);
+		for(Disciplina disciplina:disciplinas) {
+			disciplina.matricularAluno(aluno);
+		}
 	}
 
 	public void cancelarMatriculaAluno(Aluno aluno) {
@@ -101,11 +107,26 @@ public class Curso {
 		for (Disciplina disciplina : disciplinas) {
 			System.out.println("- " + disciplina.getNome() + "\n");
 		}
+
 	}
 
 	public String toCsv() {
-		return (this.getNome() + ";" + this.getCreditos() + ";" + this.getId() + ";" + this.getInicioMatricula() + ";"
-				+ this.getFimMatricula() + ";"
-				+ this.getDisciplinas().stream().map(String::valueOf).collect(Collectors.joining(",")) + ";");
+		String stringDeIdsDeDisciplinas = "";
+		String stringDeIdsDeAluno = "";
+		var listDeIdsDeDisciplina = this.getDisciplinas().stream().map(d -> String.valueOf(d.getID()))
+				.collect(Collectors.toList());
+		for (String id : listDeIdsDeDisciplina) {
+			stringDeIdsDeDisciplinas.concat(id.concat(","));
+		}
+
+		var listaDeIdsDeAlunos = this.getAlunos().stream().map(a -> String.valueOf(a.getMatricula()))
+				.collect(Collectors.toList());
+		for (String id : listaDeIdsDeAlunos) {
+			stringDeIdsDeAluno.concat(id.concat(","));
+		}
+
+		return (this.getId() + ";" + this.getNome() + ";" + this.getCreditos() + ";" + this.getInicioMatricula() + ";"
+				+ this.getFimMatricula() + ";" + stringDeIdsDeDisciplinas + ";" + listaDeIdsDeAlunos);
+
 	}
 }

@@ -1,2 +1,3 @@
 123456;senha;Pedro;1;0;
-
+123457;senha;Pedro;1;1;
+123458;senha;Pedro;1;2;
