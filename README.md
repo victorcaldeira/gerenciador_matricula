@@ -44,4 +44,4 @@ Todos os usuários do sistema têm senhas que são utilizadas para validação d
 
 - Lab01S03: Correção dos Diagramas desenvolvidos + Implementação do protótipo do sistema (principais funcionalidades usáveis, com interface e persistência) 
 
-- Lab01S04: XXXX
+- Lab01S04: Finalização da implementação do sistema (visualização e persistência) + Diagrama de Pacotes com Subsistemas + Refactoring (geração do modelo com engenharia reversa e reorganização do código para melhoria do design)
